@@ -4,7 +4,7 @@ import Header from "./Header";
 
 class App extends Component {
   state = {
-    userdata: {
+    userData: {
       name: 'Nikola Tesla',
       avatar_url: 'https://avatars3.githubusercontent.com/u10001',
     },
