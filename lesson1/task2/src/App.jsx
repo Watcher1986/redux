@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="page">
-        <DefaultContext.Provider value={this.state.userdata}>
+        <DefaultContext.Provider value={this.state.userData}>
           <Header />
         </DefaultContext.Provider>
       </div>
