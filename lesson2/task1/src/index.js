@@ -3,11 +3,11 @@ import { createStore } from 'redux';
 // const INCREMENT = 'COUNTER/INCREMENT';
 // const DECREMENT = 'COUNTER/DECREMENT';
 
-export const incrementActionCreator = {
+export const actionCreatorIncrement = {
   type: 'COUNTER/INCREMENT',
 };
 
-export const decrementActionCreator = {
+export const actionCreatorDecrement = {
   type: 'COUNTER/DECREMENT',
 };
 
