@@ -1,13 +1,13 @@
-export const addUser = user => {
+export const addUser = () => {
   return {
     type: 'USERS/ADDUSER',
-    payload: user,
+    payload: { id: 76, name: 'Kolya' },
   };
 };
 
-export const deleteUser = id => {
+export const deleteUser = () => {
   return {
     type: 'USERS/REMOVEUSER',
-    payload: id,
+    payload: 76,
   };
 };
