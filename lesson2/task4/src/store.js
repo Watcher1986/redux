@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import { rootReducer } from './users.reducer';
+import { rootReducer } from './users';
 
 const initialState = { usersList: [] }
 const store = createStore(rootReducer, initialState);
