@@ -1,10 +1,6 @@
-import { addUser, deleteUser } from "./actions";
+import { addUser, deleteUser } from './users.actions';
 
-const initialState = {
-  usersList: [],
-};
-
-export const rootReducer = (state = initialState, action) => {
+export const rootReducer = (state, action) => {
   switch (action.type) {
     case addUser:
       return {
