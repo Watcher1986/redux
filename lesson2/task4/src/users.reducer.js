@@ -12,10 +12,7 @@ export const reducer = (state, action) => {
         ...state,
         usersList: [
           ...state.usersList,
-          {
-            id: nextUserId(state.usersList),
-            name: action.payload,
-          },
+          state.usersList.push(action.payload)
         ],
       };
     case deleteUser:
