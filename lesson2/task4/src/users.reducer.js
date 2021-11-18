@@ -9,8 +9,8 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         usersList: [...state.usersList, state.usersList.concat(someData)],
-      };  
-    case deleteUser(id):
+      };
+    case deleteUser(someData):
       return {
         ...state,
         usersList: [...state.usersList, state.usersList.filter(user => user.id !== someData)],
