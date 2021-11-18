@@ -4,12 +4,12 @@ const initialState = { usersList: [] };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case addUser(action.payload):
+    case () => addUser():
       return {
         ...state,
         usersList: [...state.usersList, state.usersList.concat(action.payload)],
       };
-    case deleteUser(action.payload):
+    case () => deleteUser():
       return {
         ...state,
         usersList: [
