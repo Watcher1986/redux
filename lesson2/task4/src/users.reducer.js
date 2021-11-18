@@ -4,12 +4,12 @@ const reducer = (state, action) => {
   // const addUserAction = addUser();
   // const delUserAction = deleteUser();
   switch (action.type) {
-    case addUser().type === 'USERS/ADDUSER':
+    case addUser().type:
       return {
         ...state,
         usersList: [...state.usersList, state.usersList.concat(action.payload)],
       };
-    case deleteUser().type === 'USERS/REMOVEUSER':
+    case deleteUser().type:
       return {
         ...state,
         usersList: [...state.usersList, state.usersList.filter(user => user.id !== action.payload)],
