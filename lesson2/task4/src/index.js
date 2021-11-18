@@ -1,6 +1,7 @@
 import store from "./store";
+import { addUser, deleteUser } from './users.actions';
 
 store.subscribe(() => console.log('Store after dispatch: ', store.getState()));
 
-store.dispatch({ type: 'USERS/ADDUSER', payload: {id: 76, name: 'Kolya'} });
-store.dispatch({ type: 'USERS/REMOVEUSER', payload: 76 });
+store.dispatch(addUser({id: 76, name: 'Kolya'}));
+store.dispatch(deleteUser(76));
