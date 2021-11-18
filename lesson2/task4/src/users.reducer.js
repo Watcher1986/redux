@@ -1,20 +1,15 @@
-import { addUser, deleteUser } from './users.actions';
-
-function nextUserId(users) {
-  const maxId = users.reduce((maxId, user) => Math.max(user.id, maxId), -1);
-  return maxId + 1;
-}
+// import { addUser, deleteUser } from './users.actions';
 
 const initialState = { usersList: [] };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'USERS/ADDUSER':
+    case action.type === 'USERS/ADDUSER':
       return {
         ...state,
         usersList: [...state.usersList, state.usersList.concat(action.payload)],
       };
-    case 'USERS/REMOVEUSER':
+    case action.type === 'USERS/REMOVEUSER':
       return {
         ...state,
         usersList: [...state.usersList, state.usersList.filter(user => user.id !== action.payload)],
