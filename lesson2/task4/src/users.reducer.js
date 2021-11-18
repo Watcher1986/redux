@@ -9,10 +9,10 @@ export const reducer = (state = initialState, action) => {
         ...state,
         usersList: [...state.usersList, state.usersList.concat(user)],
       };
-    case deleteUser(userId):
+    case deleteUser(id):
       return {
         ...state,
-        usersList: [...state.usersList, state.usersList.filter(user => user.id !== userId)],
+        usersList: [...state.usersList, state.usersList.filter(user => user.id !== id)],
       };
     default:
       return state;
