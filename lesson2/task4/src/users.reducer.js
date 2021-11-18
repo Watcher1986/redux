@@ -1,15 +1,15 @@
-import { addUser, deleteUser } from './users.actions';
+import { ADDUSER, REMOVEUSER } from './users.actions';
 
 const initialState = { usersList: [] };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case () => addUser():
+    case ADDUSER:
       return {
         ...state,
         usersList: [...state.usersList, state.usersList.concat(action.payload)],
       };
-    case () => deleteUser():
+    case REMOVEUSER:
       return {
         ...state,
         usersList: [
