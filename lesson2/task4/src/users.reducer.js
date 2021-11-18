@@ -4,17 +4,15 @@ const reducer = (state, action) => {
   // const addUserAction = addUser();
   // const delUserAction = deleteUser();
   switch (action.type) {
-    case 'USERS/ADDUSER':
-      const addUserAction = addUser();
+    case () => addUser(user):
       return {
         ...state,
-        usersList: [...state.usersList, state.usersList.concat(addUserAction.payload)],
+        usersList: [...state.usersList, state.usersList.concat(user)],
       };
-    case 'USERS/REMOVEUSER':
-      const delUserAction = deleteUser();
+    case () => deleteUser(num):
       return {
         ...state,
-        usersList: [...state.usersList, state.usersList.filter(user => user.id !== delUserAction.payload)],
+        usersList: [...state.usersList, state.usersList.filter(user => user.id !== num)],
       };
     default:
       return state;
