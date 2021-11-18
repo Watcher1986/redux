@@ -12,10 +12,7 @@ const reducer = (state, action) => {
     case 'USERS/REMOVEUSER':
       return {
         ...state,
-        usersList: [
-          ...state.usersList,
-          state.usersList.filter(user => user.id !== action.payload),
-        ],
+        usersList: state.usersList.filter(user => user.id !== action.payload),
       };
     default:
       return state;
