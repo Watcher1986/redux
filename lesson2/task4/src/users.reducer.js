@@ -5,12 +5,14 @@ function nextUserId(users) {
   return maxId + 1
 }
 
-export const reducer = (state, action) => {
+const initialState = { usersList: [] };
+
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case addUser:
       return {
         ...state,
-        usersList: state.usersList.push(action.payload)
+        usersList: state.usersList.push(action.payload),
       };
     case deleteUser:
       return {
