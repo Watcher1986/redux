@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
-import reducer from './users.reducer';
+import { usersReducer } from './users.reducer';
 
 const initialState = { usersList: [] }
 
-const store = createStore(reducer, initialState);
+const store = createStore(usersReducer, initialState);
 
 export default store;
