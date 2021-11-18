@@ -1,18 +1,21 @@
-// import { addUser, deleteUser } from './users.actions';
+import { addUser, deleteUser } from './users.actions';
 
 const initialState = { usersList: [] };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case action.type === 'USERS/ADDUSER':
+    case 'USERS/ADDUSER':
       return {
         ...state,
-        usersList: [...state.usersList, state.usersList.concat(action.payload)],
+        usersList: [...state.usersList, state.usersList.concat(addUser.payload)],
       };
-    case action.type === 'USERS/REMOVEUSER':
+    case 'USERS/REMOVEUSER':
       return {
         ...state,
-        usersList: [...state.usersList, state.usersList.filter(user => user.id !== action.payload)],
+        usersList: [
+          ...state.usersList,
+          state.usersList.filter(user => user.id !== deleteUser.payload),
+        ],
       };
     default:
       return state;
