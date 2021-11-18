@@ -7,12 +7,12 @@ export const reducer = (state = initialState, action) => {
     case addUser(user):
       return {
         ...state,
-        usersList: [...state.usersList, state.usersList.concat(user)],
-      };
+        usersList: [...state.usersList, state.usersList.concat(action.payload)],
+      };  
     case deleteUser(id):
       return {
         ...state,
-        usersList: [...state.usersList, state.usersList.filter(user => user.id !== id)],
+        usersList: [...state.usersList, state.usersList.filter(user => user.id !== action.payload)],
       };
     default:
       return state;
