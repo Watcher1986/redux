@@ -1,27 +1,12 @@
 import { ADD_USER, DELETE_USER } from './user.actions';
 
-const initialState = {
-  language: 'en',
-  user: null,
-  cart: {
-    products: [],
-  },
-};
-
-const userReducer = (state = initialState, action) => {
+const userReducer = (state = null, action) => {
   switch (action.type) {
-    case ADD_USER: {
-      return {
-        ...state,
-        user: action.payload.userData,
-      };
-    }
-    case DELETE_USER: {
-      return {
-        ...state,
-        user: null,
-      };
-    }
+    case ADD_USER:
+      return action.payload.userData;
+
+    case DELETE_USER:
+      return null;
     default:
       return state;
   }
