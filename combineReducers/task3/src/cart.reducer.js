@@ -1,4 +1,4 @@
-export { ADD_PRODUCT, REMOVE_PRODUCT } from './cart.actions';
+import { ADD_PRODUCT, REMOVE_PRODUCT } from './cart.actions';
 
 const initialState = {
   language: 'en',
