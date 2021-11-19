@@ -6,8 +6,8 @@ import { addProduct, removeProduct } from './cart.actions'
 
 store.subscribe(() => console.log(store.getState()));
 
-store.dispatch(addUser());
+store.dispatch(addUser('Dima'));
 store.dispatch(deleteUser());
-store.dispatch(setLanguage());
-store.dispatch(addProduct());
-store.dispatch(removeProduct);
+store.dispatch(setLanguage('en'));
+store.dispatch(addProduct({ id: 7, name: 'bread' }));
+store.dispatch(removeProduct(7));
