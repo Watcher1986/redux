@@ -3,10 +3,9 @@ import counterReducer from './counter.reducer';
 
 const logger = store => next => action => {
   console.group(action.type);
-  console.info(action);
+  console.info('dispatching', action);
   const result = next(action);
-  console.log(result);
-  console.log(store.getState());
+  console.log('next state', store.getState());
   console.groupEnd();
   return result;
 };
