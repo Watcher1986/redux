@@ -5,7 +5,12 @@ import City from './City';
 import { getWeatherData } from './weather.actions';
 
 const Weather = ({ weatherData, getWeather }) => {
-  useEffect(() => getWeather(), []);
+  useEffect(() => {
+    async function fetchData() {
+      await getWeather();
+    }
+    fetchData();
+  }, []);
   if (!weatherData) {
     return null;
   }
