@@ -12,7 +12,7 @@ export const weatherDataRecived = weatherData => {
 };
 
 export const getWeatherData = () => {
-  return function (dispatch) {
+  return dispatch =>
     fetch(baseUrl)
       .then(response => {
         if (response.ok) {
@@ -23,5 +23,4 @@ export const getWeatherData = () => {
       .then(weatherData => {
         dispatch(weatherDataRecived(weatherData));
       });
-  };
 };
