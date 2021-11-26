@@ -11,16 +11,17 @@ export const weatherDataRecived = weatherData => {
   };
 };
 
+const fetchData = async url => {
+  const response = await fetch(url);
+  if (response.ok) {
+    return response.json();
+  }
+  throw new Error();
+};
+
 export const getWeatherData = () => {
   return dispatch =>
-    fetch(baseUrl)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error();
-      })
-      .then(weatherData => {
-        dispatch(weatherDataRecived(weatherData));
-      });
+    fetchData(baseUrl).then(weatherData => {
+      dispatch(weatherDataRecived(weatherData));
+    });
 };
