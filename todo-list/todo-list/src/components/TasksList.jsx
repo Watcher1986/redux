@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Task from './Task';
 import CreateTaskInput from './CreateTaskInput';
 
-const TasksList = ({ tasks, handleTaskStatusChange, handleTaskDelete, sortedList, createNewTask }) => {
+const TasksList = ({ tasks, handleTaskStatusChange, handleTaskDelete, createNewTask }) => {
   return (
     <div className="todo-list">
       <CreateTaskInput onCreate={createNewTask} />
