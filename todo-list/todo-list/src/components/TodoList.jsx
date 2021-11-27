@@ -6,7 +6,7 @@ import CreateTaskInput from './CreateTaskInput';
 import * as tasksActions from '../tasks/tasks.actions';
 import { sortedTasksListSelector } from '../tasks/tasks.selectors';
 
-const TodoList = ({ tasks, getTasksList, updateTasksList, deleteTaskFromList, createNewTask }) => {
+const TodoList = ({ tasks, getTasksList, updateTask, deleteTask, createNewTask }) => {
   useEffect(() => {
     async function fetchData() {
       await getTasksList();
@@ -21,8 +21,8 @@ const TodoList = ({ tasks, getTasksList, updateTasksList, deleteTaskFromList, cr
         <CreateTaskInput onCreate={createNewTask} />
         <TasksList
           tasks={tasks}
-          handleTaskStatusChange={updateTasksList}
-          handleTaskDelete={deleteTaskFromList}
+          handleTaskStatusChange={updateTask}
+          handleTaskDelete={deleteTask}
         />
       </div>
     </>
@@ -32,15 +32,15 @@ const TodoList = ({ tasks, getTasksList, updateTasksList, deleteTaskFromList, cr
 TodoList.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   getTasksList: PropTypes.func.isRequired,
-  updateTasksList: PropTypes.func.isRequired,
+  updateTask: PropTypes.func.isRequired,
   createNewTask: PropTypes.func.isRequired,
-  deleteTaskFromList: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
 };
 
 const mapDispatch = {
   getTasksList: tasksActions.getTasksList,
-  updateTasksList: tasksActions.updateTasksList,
-  deleteTaskFromList: tasksActions.deleteTaskFromList,
+  updateTask: tasksActions.updateTask,
+  deleteTask: tasksActions.deleteTask,
   createNewTask: tasksActions.createNewTask,
 };
 

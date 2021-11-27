@@ -19,7 +19,7 @@ export const getTasksList = () => {
   return thunkAction;
 };
 
-export const updateTasksList = taskId => {
+export const updateTask = taskId => {
   const thunkAction = function (dispatch, getState) {
     const state = getState();
     const tasksList = tasksListSelector(state);
@@ -33,7 +33,7 @@ export const updateTasksList = taskId => {
   return thunkAction;
 };
 
-export const deleteTaskFromList = taskId => {
+export const deleteTask = taskId => {
   const thunkAction = function (dispatch) {
     tasksGateway.deleteTask(taskId).then(() => dispatch(getTasksList()));
   };
