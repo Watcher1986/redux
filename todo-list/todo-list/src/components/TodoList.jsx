@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import TasksList from './TasksList';
+import CreateTaskInput from './CreateTaskInput';
 import * as tasksActions from '../tasks/tasks.actions';
 import { sortedTasksListSelector } from '../tasks/tasks.selectors';
 
@@ -16,12 +17,14 @@ const TodoList = ({ tasks, getTasksList, updateTasksList, deleteTaskFromList, cr
   return (
     <>
       <h1 className="title">Todo LIst</h1>
-      <TasksList
-        tasks={tasks}
-        handleTaskStatusChange={updateTasksList}
-        handleTaskDelete={deleteTaskFromList}
-        createNewTask={createNewTask}
-      />
+      <div className="todo-list">
+        <CreateTaskInput onCreate={createNewTask} />
+        <TasksList
+          tasks={tasks}
+          handleTaskStatusChange={updateTasksList}
+          handleTaskDelete={deleteTaskFromList}
+        />
+      </div>
     </>
   );
 };

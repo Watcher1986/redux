@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Task from './Task';
-import CreateTaskInput from './CreateTaskInput';
 
-const TasksList = ({ tasks, handleTaskStatusChange, handleTaskDelete, createNewTask }) => {
+const TasksList = ({ tasks, handleTaskStatusChange, handleTaskDelete }) => {
   return (
-    <div className="todo-list">
-      <CreateTaskInput onCreate={createNewTask} />
+    <>
       <ul className="list">
         {tasks.map(task => (
           <Task
@@ -17,7 +15,7 @@ const TasksList = ({ tasks, handleTaskStatusChange, handleTaskDelete, createNewT
           />
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 
@@ -25,7 +23,6 @@ TasksList.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   handleTaskStatusChange: PropTypes.func.isRequired,
   handleTaskDelete: PropTypes.func.isRequired,
-  createNewTask: PropTypes.func.isRequired,
 };
 
 export default TasksList;
